@@ -6,9 +6,80 @@
   </head>
   <body>
   <h1>Best csv Libraries for Python</h1>
-    <p>
+   After the lists, the dictionary is the most flexible built-in type. If the list is an ordered collection, then the dictionary is unordered. Main features of the dictionaries:
 
-      Here is the most important Libraries
-    </p>
+Access is by key, not by index. By analogy with the list, in the dictionary you can access the elements in a cycle by keys.
+The values ​​of the dictionary are stored in unsorted order, moreover, the keys can be stored not in the order in which they are added.
+By analogy with lists, the dictionary can store nested dictionaries. The dictionary can store objects of any type (heterogeneous) as values. The key in the dictionary is an immutable type, it can be a string, an integer, a float, or a tuple consisting of the specified types.
+Dictionaries are implemented as hash tables with fast access.
+Dictionaries, as well as lists, store links to objects, rather than objects themselves.
+Today we will consider the following topics.
+
+What is a dictionary.
+Functions / methods of the dictionary.
+Operations with the dictionary.
+Examples.
+1. What is a dictionary
+A dictionary is an associative array or hash. This is an unordered set of key pairs: a value that requires the uniqueness of keys. A pair of braces {} creates an empty dictionary. Unlike sequences, access to the elements of the dictionary is done by the key, and not by the index, the key can be of any type, the key does not allow changes.
+
+Basic operations on the dictionary - saving with the given key and extraction on it of value. You can also delete the key: value pair using the del statement.
+
+The keys () method for the dictionary returns a list of all used keys in an arbitrary order; To sort the list, use the sort () method. To determine if a certain key exists, there is the has_key () method, which in version 3.0 will have time to expire - there is an in operator instead. Adding a new object to the dictionary does not require preliminary checks: if the key already corresponded to a certain value, it will be overwritten.
+
+Example - a dictionary as a telephone directory:
+
+1
+2
+3
+4
+5
+6th
+7th
+8
+9
+10
+eleven
+12
+13
+>>> dic = {'vanya': 23323223, 'smith': 32232332}
+>>> dic ['fedya'] = 33332222
+>>> dic
+{'vanya': 23323223, 'fedya': 33332222, 'smith': 32232332}
+>>> dic ['smith']
+32232332
+>>> del dic ['vanya']
+>>> dic
+{'fedya': 33332222, 'smith': 32232332}
+>>> dic.keys ()
+['fedya', 'smith']
+>>> dic.has_key ('fedya')
+True
+There are several ways to create a dictionary:
+
+An ordinary expression is convenient if the dictionary is static:
+1
+D = {'name': 'mel', 'age': 45}
+Dynamic creation on the fly:
+1
+2
+3
+D = {}
+D ['name'] = 'mel'
+D ['age'] = 45
+Using the dict () function, the keys must be strings. With this function, you can get rid of the mandatory condition to enclose the key in quotation marks. The example shows four options for creating the same dictionary:
+1
+2
+3
+4
+d1 = dict (id = 1948, name = "Washer", size = 3)
+d2 = dict ({"id": 1948, "name": "Washer", "size": 3})
+d3 = dict ([("id", 1948), ("name", "Washer"), ("size", 3)])
+d4 = dict (zip (("id", "name", "size"), (1948, "Washer", 3)))
+Using fromkeys () - creates a dictionary for a list of keys with empty values:
+1
+D = {} .fromkeys (['name', 'age'], 123)
+Using the constructor:
+1
+d = dict ((x, x ** 2) for x in xrange (5))
   </body>
 </html>
